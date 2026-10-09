@@ -1,0 +1,227 @@
+{
+  "entities": {
+    "Settings": {
+      "title": "Website Settings",
+      "description": "Global website configuration, company info, homepage sections, and SEO",
+      "type": "object",
+      "properties": {
+        "companyName": { "type": "string", "maxLength": 100 },
+        "companyDescription": { "type": "string", "maxLength": 2000 },
+        "logoUrl": { "type": "string", "maxLength": 1000 },
+        "faviconUrl": { "type": "string", "maxLength": 1000 },
+        "mission": { "type": "string", "maxLength": 1000 },
+        "vision": { "type": "string", "maxLength": 1000 },
+        "history": { "type": "string", "maxLength": 2000 },
+        "values": { "type": "string", "maxLength": 2000 },
+        "email": { "type": "string", "maxLength": 100 },
+        "phone": { "type": "string", "maxLength": 50 },
+        "whatsapp": { "type": "string", "maxLength": 50 },
+        "address": { "type": "string", "maxLength": 200 },
+        "openingHours": { "type": "string", "maxLength": 100 },
+        "facebookUrl": { "type": "string", "maxLength": 200 },
+        "instagramUrl": { "type": "string", "maxLength": 200 },
+        "tiktokUrl": { "type": "string", "maxLength": 200 },
+        "twitterUrl": { "type": "string", "maxLength": 200 },
+        "linkedinUrl": { "type": "string", "maxLength": 200 },
+        "heroHeading": { "type": "string", "maxLength": 200 },
+        "heroSubtitle": { "type": "string", "maxLength": 200 },
+        "heroDescription": { "type": "string", "maxLength": 1000 },
+        "heroImageUrl": { "type": "string", "maxLength": 1000 },
+        "heroButtonText": { "type": "string", "maxLength": 100 },
+        "heroButtonUrl": { "type": "string", "maxLength": 200 },
+        "heroButton2Text": { "type": "string", "maxLength": 100 },
+        "heroButton2Url": { "type": "string", "maxLength": 200 },
+        "ctaHeading": { "type": "string", "maxLength": 200 },
+        "ctaDescription": { "type": "string", "maxLength": 1000 },
+        "ctaButtonText": { "type": "string", "maxLength": 100 },
+        "ctaButtonUrl": { "type": "string", "maxLength": 200 },
+        "footerCopyright": { "type": "string", "maxLength": 200 },
+        "footerBio": { "type": "string", "maxLength": 1000 },
+        "seoTitle": { "type": "string", "maxLength": 150 },
+        "seoDescription": { "type": "string", "maxLength": 300 },
+        "seoKeywords": { "type": "string", "maxLength": 300 },
+        "mapsEmbedUrl": { "type": "string", "maxLength": 2000 },
+        "statProjects": { "type": "string", "maxLength": 20 },
+        "statClients": { "type": "string", "maxLength": 20 },
+        "statExperience": { "type": "string", "maxLength": 20 },
+        "statSatisfaction": { "type": "string", "maxLength": 20 }
+      }
+    },
+    "Service": {
+      "title": "Service",
+      "description": "A service offered by the company",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "maxLength": 100 },
+        "description": { "type": "string", "maxLength": 1000 },
+        "icon": { "type": "string", "maxLength": 50 },
+        "imageUrl": { "type": "string", "maxLength": 1000 },
+        "buttonText": { "type": "string", "maxLength": 50 },
+        "buttonUrl": { "type": "string", "maxLength": 200 },
+        "order": { "type": "number" },
+        "isActive": { "type": "boolean" },
+        "features": { "type": "array" }
+      }
+    },
+    "Project": {
+      "title": "Project",
+      "description": "A gallery project image and details",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "maxLength": 100 },
+        "description": { "type": "string", "maxLength": 1000 },
+        "category": { "type": "string", "maxLength": 100 },
+        "imageUrl": { "type": "string", "maxLength": 1000 },
+        "order": { "type": "number" },
+        "isActive": { "type": "boolean" },
+        "featured": { "type": "boolean" }
+      }
+    },
+    "TeamMember": {
+      "title": "Team Member",
+      "description": "Staff and leadership team member",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "maxLength": 100 },
+        "role": { "type": "string", "maxLength": 100 },
+        "bio": { "type": "string", "maxLength": 1000 },
+        "imageUrl": { "type": "string", "maxLength": 1000 },
+        "phone": { "type": "string", "maxLength": 50 },
+        "email": { "type": "string", "maxLength": 100 },
+        "linkedin": { "type": "string", "maxLength": 200 },
+        "order": { "type": "number" },
+        "isActive": { "type": "boolean" }
+      }
+    },
+    "Testimonial": {
+      "title": "Testimonial",
+      "description": "Customer feedback and review",
+      "type": "object",
+      "properties": {
+        "clientName": { "type": "string", "maxLength": 100 },
+        "location": { "type": "string", "maxLength": 100 },
+        "content": { "type": "string", "maxLength": 1000 },
+        "rating": { "type": "number" },
+        "avatarUrl": { "type": "string", "maxLength": 1000 },
+        "order": { "type": "number" },
+        "isActive": { "type": "boolean" }
+      }
+    },
+    "Announcement": {
+      "title": "Announcement",
+      "description": "Important notice or news",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "maxLength": 150 },
+        "content": { "type": "string", "maxLength": 1000 },
+        "date": { "type": "string", "maxLength": 50 },
+        "badge": { "type": "string", "maxLength": 50 },
+        "link": { "type": "string", "maxLength": 200 },
+        "isActive": { "type": "boolean" }
+      }
+    },
+    "ParentsAssociation": {
+      "title": "Parents Association",
+      "description": "Parents Association details, executives, and activities",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "maxLength": 150 },
+        "description": { "type": "string", "maxLength": 2000 },
+        "chairmanName": { "type": "string", "maxLength": 100 },
+        "chairmanTitle": { "type": "string", "maxLength": 100 },
+        "chairmanPhoto": { "type": "string", "maxLength": 1000 },
+        "chairmanMessage": { "type": "string", "maxLength": 2000 },
+        "contactEmail": { "type": "string", "maxLength": 100 },
+        "contactPhone": { "type": "string", "maxLength": 50 },
+        "meetingsInfo": { "type": "string", "maxLength": 1000 },
+        "isPublished": { "type": "boolean" }
+      }
+    },
+    "MediaItem": {
+      "title": "Media Item",
+      "description": "Uploaded image file item in media library",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "maxLength": 150 },
+        "category": { "type": "string", "maxLength": 50 },
+        "url": { "type": "string", "maxLength": 200000 },
+        "sizeKB": { "type": "number" },
+        "createdAt": { "type": "string" }
+      }
+    },
+    "Inquiry": {
+      "title": "Inquiry",
+      "description": "A customer contact or quote request",
+      "type": "object",
+      "properties": {
+        "type": { "type": "string", "maxLength": 20 },
+        "name": { "type": "string", "maxLength": 100 },
+        "phone": { "type": "string", "maxLength": 50 },
+        "email": { "type": "string", "maxLength": 100 },
+        "serviceRequired": { "type": "string", "maxLength": 100 },
+        "projectDescription": { "type": "string", "maxLength": 2000 },
+        "preferredDate": { "type": "string", "maxLength": 50 },
+        "status": { "type": "string", "maxLength": 20 },
+        "createdAt": { "type": "string" }
+      }
+    },
+    "Admin": {
+      "title": "Admin",
+      "description": "An authorized administrator member",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "maxLength": 100 },
+        "name": { "type": "string", "maxLength": 100 },
+        "profession": { "type": "string", "maxLength": 100 },
+        "role": { "type": "string", "maxLength": 50 },
+        "phone": { "type": "string", "maxLength": 50 },
+        "department": { "type": "string", "maxLength": 100 },
+        "status": { "type": "string", "maxLength": 20 },
+        "addedAt": { "type": "string" },
+        "addedBy": { "type": "string", "maxLength": 100 }
+      }
+    }
+  },
+  "firestore": {
+    "settings/{documentId}": {
+      "schema": { "$ref": "#/entities/Settings" },
+      "description": "Singleton config document. ID is usually 'global'"
+    },
+    "services/{serviceId}": {
+      "schema": { "$ref": "#/entities/Service" },
+      "description": "List of active and inactive services"
+    },
+    "projects/{projectId}": {
+      "schema": { "$ref": "#/entities/Project" },
+      "description": "Gallery projects"
+    },
+    "team/{memberId}": {
+      "schema": { "$ref": "#/entities/TeamMember" },
+      "description": "Team and management members"
+    },
+    "testimonials/{testimonialId}": {
+      "schema": { "$ref": "#/entities/Testimonial" },
+      "description": "Client reviews and feedback"
+    },
+    "announcements/{announcementId}": {
+      "schema": { "$ref": "#/entities/Announcement" },
+      "description": "Announcements and notice board"
+    },
+    "parents_association/{docId}": {
+      "schema": { "$ref": "#/entities/ParentsAssociation" },
+      "description": "Parents' Association info and records"
+    },
+    "media/{mediaId}": {
+      "schema": { "$ref": "#/entities/MediaItem" },
+      "description": "Uploaded media library items"
+    },
+    "inquiries/{inquiryId}": {
+      "schema": { "$ref": "#/entities/Inquiry" },
+      "description": "Customer requests"
+    },
+    "admins/{adminId}": {
+      "schema": { "$ref": "#/entities/Admin" },
+      "description": "List of admin users allowed to read/write"
+    }
+  }
+}

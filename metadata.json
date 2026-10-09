@@ -1,0 +1,8 @@
+{
+  "name": "ASANTEX DECOR",
+  "description": "Premium Interior & Exterior Finishing Company",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

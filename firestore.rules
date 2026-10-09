@@ -1,0 +1,77 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if false;
+    }
+    
+    function isSignedIn() { return request.auth != null; }
+    function isAdmin() { 
+      return isSignedIn() && 
+      (
+        request.auth.token.email == "samuelzagwa40@gmail.com" || 
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid)) ||
+        (request.auth.token.email != null && exists(/databases/$(database)/documents/admins/$(request.auth.token.email)))
+      );
+    }
+    
+    // Public read, admin write collections
+    match /settings/{documentId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    
+    match /services/{serviceId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    
+    match /projects/{projectId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    
+    match /team/{memberId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    
+    match /testimonials/{testimonialId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    
+    match /announcements/{announcementId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    
+    match /parents_association/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    
+    match /media/{mediaId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    
+    // Inquiries are public create with input guards, admin read/write
+    match /inquiries/{inquiryId} {
+      allow read, update, delete: if isAdmin();
+      allow create: if true 
+                    && request.resource.data.keys().hasAny(['name', 'phone'])
+                    && request.resource.data.name is string && request.resource.data.name.size() <= 100;
+    }
+    
+    // Admins are admin read/write, user can read self by uid or email
+    match /admins/{adminId} {
+      allow read: if isSignedIn() && (
+        request.auth.uid == adminId || 
+        (request.auth.token.email != null && request.auth.token.email == adminId) ||
+        isAdmin()
+      );
+      allow write: if isAdmin(); 
+    }
+  }
+}
